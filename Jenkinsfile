@@ -8,7 +8,11 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'nohup java -jar target/cap-java.jar &'
+        sh '''echo "start deploy script"
+source /etc/profile
+
+nohup java -jar target/cap-java.jar &
+echo "deploy script end"'''
       }
     }
   }
