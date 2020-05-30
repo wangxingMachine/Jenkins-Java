@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''echo "start deploy script"
-sh deploy_java.sh
+sh ./deploy_java.sh
 echo "deploy script end"'''
       }
     }
