@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'nohup java -jar target/cap-java.jar > cap-java.log &'
+        sh 'nohup java -jar target/cap-java.jar &'
       }
     }
   }
