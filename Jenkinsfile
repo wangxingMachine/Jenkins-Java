@@ -9,8 +9,8 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''echo "start deploy script"
-source ~/.bashrc
 
+BUILD_ID=DONTKILLME
 nohup java -jar target/cap-java.jar &
 echo "deploy script end"'''
       }
