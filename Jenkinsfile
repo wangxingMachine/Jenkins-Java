@@ -6,5 +6,10 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    stage('Upload') {
+      steps {
+        sshPublisher(alwaysPublishFromMaster: true, failOnError: true, masterNodeName: 'master')
+      }
+    }
   }
 }
