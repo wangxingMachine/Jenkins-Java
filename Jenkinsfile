@@ -1,7 +1,7 @@
 def remote = [:]
     remote.name = 'ubuntu-java'
     remote.host = '192.168.81.182'
-    remote.user = 'root'
+    remote.user = 'wangxing'
     remote.password = 'chengyue1212'
     remote.allowAnyHosts = true
 
