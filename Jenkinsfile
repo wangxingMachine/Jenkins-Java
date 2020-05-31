@@ -8,8 +8,7 @@ pipeline {
     }
     stage('Upload') {
       steps {
-        sshCommand()
-        sshPut(from: 'target/cap-java.jar', into: '/home/wangxing/java/jenkins', failOnError: true)
+        sshPut(from: 'target/cap-java.jar', into: '/home/wangxing/java/jenkins', failOnError: true, remote: '192.168.81.182')
       }
     }
   }
