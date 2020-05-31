@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''echo "start deploy script"
-BUILD_ID=dontKillMe nohup java -jar target/cap-java.jar &
+BUILD_ID=dontKillMe nohup java -jar /home/newdisk/data/jenkins/workspace/Capistrano-java_master/target/cap-java.jar &
 echo $(ps -ef|grep java)
 echo "deploy script end"'''
       }
