@@ -13,7 +13,8 @@ echo "start kill cap-java"
 echo `ps aux | grep -v grep | grep 'cap-java'|awk 'NR==1'`
 pid=`ps aux | grep -v grep | grep "cap-java"|awk 'NR==1 {print $2}'`
 if [ "$pid" = ""]
-then echo "no cap-java pid alive"
+then
+ echo "no cap-java pid alive"
 else
     kill -9 $pid
 fi
