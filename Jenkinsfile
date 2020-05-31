@@ -28,7 +28,7 @@ pipeline {
         }
         stage('ubuntu-B') {
           steps {
-            sshPut(from: 'target/cap-java.jar', into: '/home/wangxing/java/jenkins', remote: '${remote_sec}', failOnError: true)
+            sshPut(from: 'target/cap-java.jar', into: '/home/wangxing/java/jenkins', remote: remote_sec, failOnError: true)
           }
         }
       }
