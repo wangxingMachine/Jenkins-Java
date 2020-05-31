@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''echo "start deploy script"
 echo "start kill cap-java"
-pid='ps -ef|grep cap-java|awk '{print $2}''
+pid=`ps -ef|grep cap-java|awk '{print $2}'`
 kill -9 $pid
 echo "kill $pid success"
 OLD_BUILD_ID=$BUILD_ID
