@@ -1,9 +1,3 @@
-  def remote = [:]
-  remote.name = 'Ubuntu-A'
-  remote.host = '192.168.81.182'
-  remote.user = 'wangxing'
-  remote.password = 'chengyue1212'
-  remote.allowAnyHosts = true
 pipeline {
   agent any
   stages {
@@ -19,7 +13,7 @@ pipeline {
     }
     stage('Restart') {
       steps {
-        sshCommand(command: 'nohup java -jar /home/wangxing/java/jenkins/cap-java.jar &', failOnError: true, remote: remote)
+        sshCommand(command: 'nohup /opt/jdk1.8.0_172/bin/java -jar /home/wangxing/java/jenkins/cap-java.jar &', failOnError: true, remote: remote)
       }
     }
   }
