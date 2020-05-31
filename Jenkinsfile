@@ -9,8 +9,8 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''echo "start deploy script"
-BUILD_ID=dontKillMe nohup java -jar /home/newdisk/data/jenkins/workspace/Capistrano-java_master/target/cap-java.jar &
-sleep 20
+daemonize -E BUILD_ID=dontKillMe nohup java -jar /home/newdisk/data/jenkins/workspace/Capistrano-java_master/target/cap-java.jar &
+sleep 30
 echo $(ps -ef|grep java)
 echo "deploy script end"'''
       }
