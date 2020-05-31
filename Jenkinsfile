@@ -6,11 +6,11 @@
     remote.allowAnyHosts = true
 
  def remote_sec = [:]
-    remote.name = 'ubuntu-B'
-    remote.host = '192.168.81.129'
-    remote.user = 'root'
-    remote.password = '123456'
-    remote.allowAnyHosts = true
+    remote_sec.name = 'ubuntu-B'
+    remote_sec.host = '192.168.81.129'
+    remote_sec.user = 'root'
+    remote_sec.password = '123456'
+    remote_sec.allowAnyHosts = true
 pipeline {
   agent any
   stages {
