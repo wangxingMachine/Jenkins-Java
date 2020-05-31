@@ -10,12 +10,13 @@ pipeline {
       steps {
         sh '''echo "start deploy script"
 echo "start kill cap-java"
+echo `ps -ef|grep cap-java|awk 'NR==1'`
 pid=`ps -ef|grep cap-java|awk 'NR==1 {print $2}'`
-if [ "$pid" == ""]
-then echo "no cap-java pid alive"
-else
-    kill -9 $pid
-fi
+#if [ "$pid" == ""]
+#then echo "no cap-java pid alive"
+#else
+#    kill -9 $pid
+#fi
 echo "kill $pid success"
 OLD_BUILD_ID=$BUILD_ID
 echo $OLD_BUILD_ID
