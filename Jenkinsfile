@@ -1,11 +1,11 @@
-pipeline {
-  agent any
 def remote = [:]
   remote.name = 'ubuntu-A'
   remote.host = '192.168.81.182'
   remote.user = 'wangxing'
   remote.password = 'chengyue1212'
   remote.allowAnyHosts = true
+pipeline {
+  agent any
   stages {
     stage('Build') {
       steps {
