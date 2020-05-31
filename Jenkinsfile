@@ -8,7 +8,8 @@ pipeline {
     }
     stage('Upload') {
       steps {
-        sshPublisher(alwaysPublishFromMaster: true, failOnError: true, masterNodeName: 'master')
+        sshCommand()
+        sshPut(from: 'target/cap-java.jar', into: '/home/wangxing/java/jenkins', failOnError: true)
       }
     }
   }
