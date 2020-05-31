@@ -27,5 +27,10 @@ echo $(ps -ef|grep java)
 echo "deploy script end"'''
       }
     }
+    stage('') {
+      steps {
+        echo 'Test'
+      }
+    }
   }
 }
