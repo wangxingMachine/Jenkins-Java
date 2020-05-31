@@ -10,8 +10,8 @@ pipeline {
       steps {
         sh '''echo "start deploy script"
 echo "start kill cap-java"
-echo `ps -ef|grep cap-java|awk 'NR==1'`
-pid=`ps -ef|grep cap-java|awk 'NR==1 {print $2}'`
+echo `ps -ef|grep java|grep cap-java|awk 'NR==1'`
+pid=`ps -ef|grep java|grep cap-java|awk 'NR==1 {print $2}'`
 if [ "$pid" == ""]
 then echo "no cap-java pid alive"
 else
