@@ -9,8 +9,8 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''echo "start deploy script"
+BUILD_ID=dontKillMe nohup java -jar target/cap-java.jar &
 echo $(ps -ef|grep java)
-sh ./deploy_java.sh
 echo "deploy script end"'''
       }
     }
